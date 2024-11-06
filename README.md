@@ -1,6 +1,6 @@
 # Book store
 
-Разработка книжного магазина
+Разработка главной страницы книжного магазина
 
 ## Установка
 
@@ -33,13 +33,17 @@ Webpack 5
 #### Плагины Webpack:
 
 1. TerserPlugin
-2. HtmlWebpackPlugin
+2. MiniCssExtractPlugin
+3. CssMinimizerPlugin
 
 #### Лоадеры:
 
 1. css-loader
-2. style-loader
+2. scss-loader
+3. typescript-loader
 
 ### Пакетный менеджер:
 
 npm
+
+<a href="https://www.figma.com/design/8XxPADjILtnlah4yWI0CLb/bookshop?node-id=0-1&node-type=canvas" style="text-decoration:none; color: #ffffff; padding: 20px; background-color: blue;">МАКЕТ</a>
