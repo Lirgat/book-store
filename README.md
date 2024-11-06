@@ -2,6 +2,8 @@
 
 Разработка главной страницы книжного магазина
 
+<a href="https://www.figma.com/design/8XxPADjILtnlah4yWI0CLb/bookshop?node-id=0-1&node-type=canvas" target="_blank">Ссылка на макет</a>
+
 ## Установка
 
 1. Клонирование репозитория
@@ -46,4 +48,7 @@ Webpack 5
 
 npm
 
-<a href="https://www.figma.com/design/8XxPADjILtnlah4yWI0CLb/bookshop?node-id=0-1&node-type=canvas" style="text-decoration:none; color: #ffffff; padding: 20px; background-color: blue;">МАКЕТ</a>
+## Контакты:
+
+1. Telegram: @PocoExplodes
+2. Email: veb455@mail.ru
