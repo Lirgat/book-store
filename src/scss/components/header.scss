@@ -32,3 +32,28 @@
     @include svg(unset, unset);
     cursor: pointer;
 }
+
+.banner-slide {
+    margin-top: 40px;
+    width: 100%;
+    @include flex(column, center, center, 10px)
+}
+
+.slide-wrapper {
+    width: 100%;
+}
+
+.slide-wrapper_img {
+    width: 100%;
+}
+
+.slide-dots {
+    @include flex(row, center, center, 10px)
+}
+
+.slide-dots_dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    background-color: #1C2A39;
+}
