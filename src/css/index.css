@@ -1,7 +1,76 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  padding: 0 11.11% 0 11.11%;
+}
+
+.project-header {
+  padding-top: 47px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0;
+}
+
+.header-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0;
+}
+
+.header-logo {
+  font-size: 1.5rem;
+}
+
+.header-links, .header-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.header-links_link {
+  color: #5C6A79;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: none;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.active {
+  color: #1C2A39;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: none;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.header-buttons_login, .header-buttons_search, .header-buttons_shopper {
+  background-color: none;
+  border: none;
+  width: unset;
+  height: unset;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=index.css.map */

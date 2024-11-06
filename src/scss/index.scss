@@ -1,12 +1,19 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("../assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat';
 }
 
-@mixin flex($direction, $align, $justify) {
-    display: flex;
-    flex-direction: $direction;
-    align-items: $align;
-    justify-content: $justify;
+html {
+    font-size: 16px;
+}
+
+body {
+    padding: 0 11.11% 0 11.11%;
 }
