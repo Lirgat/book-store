@@ -36,12 +36,29 @@
 .banner-slide {
     margin-top: 40px;
     width: 100%;
-    @include flex(column, center, center, 10px)
+    @include flex(column, center, center, 10px);
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    width: 100%;
+}
+
+.slide-wrapper:not(.active-slide){
+    height: 0;
 }
 
 .slide-wrapper {
     width: 100%;
-}
+    visibility: hidden;
+    transform: scale(0.05);
+    transition: 0.3s;
+  }
+  
+  .slide-wrapper.active-slide {
+    transform: scale(1);
+    visibility: visible;
+  }
 
 .slide-wrapper_img {
     width: 100%;
@@ -52,8 +69,15 @@
 }
 
 .slide-dots_dot {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     border-radius: 50px;
-    background-color: #1C2A39;
+    background-color: rgb(160, 154, 223, 0.6);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.active-dot {
+    background-color: #9E98DC;
+    transform: scale(1.1);
 }
