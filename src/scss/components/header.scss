@@ -1,7 +1,7 @@
 @import "../mixins.scss";
 
 .project-header {
-    padding-top: 47px;
+    padding: 47px 20.11% 0 20.11%;
     @include flex(column, center, space-around, 0);
 }
 
