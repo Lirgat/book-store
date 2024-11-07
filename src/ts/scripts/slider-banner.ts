@@ -1,22 +1,35 @@
-const dots = document.querySelectorAll('.slide-dots_dot') as NodeListOf<HTMLElement>;
-const sliders = document.querySelectorAll('.slide-wrapper') as NodeListOf<HTMLElement>;
+const dots = document.querySelectorAll(
+  ".slide-dots_dot"
+) as NodeListOf<HTMLElement>;
+const sliders = document.querySelectorAll(
+  ".slide-wrapper"
+) as NodeListOf<HTMLElement>;
 
-console.log(dots)
+let currentSlide: number = 0;
 
-const initSlider = () => {
-    let currentSlide:number = 0;
+const classListing = (
+  htmlArr: NodeListOf<HTMLElement>,
+  classname: string,
+  index: number
+): void => {
+  htmlArr.forEach((el) => {
+    el.classList.remove(classname);
+  });
+  htmlArr[index].classList.add(classname);
+};
 
-    dots.forEach((dot: HTMLElement, index:number) => {
-        dot.addEventListener("click", ():void => {
-            currentSlide = index
-            dots.forEach((dot)=> {
-                dot.classList.remove("active")
-            })
-            dots[currentSlide].classList.add('active')
-        })
-    })
-    
-}
+const displaySlides = (index: number): void => {
+  classListing(sliders, "active-slide", index);
+};
 
-export default initSlider
+const initSlider = (): void => {
+  dots.forEach((dot: HTMLElement, index: number) => {
+    dot.addEventListener("click", (): void => {
+      currentSlide = index;
+      classListing(dots, "active-dot", index);
+      displaySlides(index);
+    });
+  });
+};
 
+export default initSlider;
