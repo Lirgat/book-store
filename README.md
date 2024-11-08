@@ -4,6 +4,8 @@
 
 <a href="https://www.figma.com/design/8XxPADjILtnlah4yWI0CLb/bookshop?node-id=0-1&node-type=canvas" target="_blank">Ссылка на макет</a>
 
+Ключ API - AIzaSyD2Bt-7RvxOwAJq8L4KcNHgX6ZchXJMcXY
+
 ## Установка
 
 1. Клонирование репозитория
