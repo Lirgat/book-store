@@ -1,0 +1,22 @@
+@import "../mixins.scss";
+
+.project-main {
+    @include flex(row, center, space-between, 0);
+    margin: 100px 11.11% 0 11.11%;
+}
+
+.category-list {
+    @include flex(column, flex-start, flex-start, 23px);
+    list-style-type: none;
+}
+
+.category-list_li {
+    @include button(#5C6A79, 18px);
+    font-weight: 600;
+}
+
+.category-list_li:hover {
+    transform: scale(1.1);
+    color: #1c2a39;
+    font-weight: 800;
+}

@@ -1,7 +1,7 @@
 @import "../mixins.scss";
 
 .project-header {
-    margin: 47px 20.11% 0 20.11%;
+    margin: 47px 11.11% 0 11.11%;
     @include flex(column, center, space-around, 0);
 }
 
@@ -11,7 +11,7 @@
 }
 
 .header-logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .header-links, .header-buttons {
@@ -19,18 +19,19 @@
 } 
 
 .header-links_link {
-    @include button(#5C6A79, 10px);
+    @include button(#5C6A79, 16px);
     font-weight: 700;
 }
 
 .active {
-    @include button(#1C2A39, 10px);
+    @include button(#1C2A39, 16px);
     font-weight: 900;
 }
 
 .header-buttons_login, .header-buttons_search, .header-buttons_shopper {
     @include svg(unset, unset);
     cursor: pointer;
+    transform: scale(1.4);
 }
 
 .banner-slide {
@@ -112,7 +113,7 @@
     padding: 0 47px 20px 20px;
     height: 273px;
     bottom: 10%;
-    right: -30%;
+    right: -13%;
 }
 
 .slider-wrapper_pink:hover {

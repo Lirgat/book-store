@@ -14,7 +14,7 @@ html {
 }
 
 .project-header {
-  margin: 47px 20.11% 0 20.11%;
+  margin: 47px 11.11% 0 11.11%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,7 +32,7 @@ html {
 }
 
 .header-logo {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .header-links, .header-buttons {
@@ -48,7 +48,8 @@ html {
   text-decoration: none;
   cursor: pointer;
   background-color: none;
-  font-size: 10px;
+  font-size: 16px;
+  transition: 0.3s;
   font-weight: 700;
 }
 
@@ -57,7 +58,8 @@ html {
   text-decoration: none;
   cursor: pointer;
   background-color: none;
-  font-size: 10px;
+  font-size: 16px;
+  transition: 0.3s;
   font-weight: 900;
 }
 
@@ -67,6 +69,7 @@ html {
   width: unset;
   height: unset;
   cursor: pointer;
+  transform: scale(1.4);
 }
 
 .banner-slide {
@@ -142,7 +145,7 @@ html {
 .slider-wrapper_purple {
   position: absolute;
   background-color: #9E98DC;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   padding: 20px;
   z-index: 100;
@@ -166,7 +169,7 @@ html {
 .slider-wrapper_pink {
   position: absolute;
   background-color: #FF8FE6;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   padding: 20px;
   z-index: 100;
@@ -176,7 +179,7 @@ html {
   padding: 0 47px 20px 20px;
   height: 273px;
   bottom: 10%;
-  right: -30%;
+  right: -13%;
 }
 
 .slider-wrapper_pink:hover {
@@ -186,6 +189,40 @@ html {
 .slider-wrapper_pink:hover .pink_img {
   transition: 0.3s;
   transform: translateX(10px);
+}
+
+.project-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  margin: 100px 11.11% 0 11.11%;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 23px;
+  list-style-type: none;
+}
+
+.category-list_li {
+  color: #5C6A79;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: none;
+  font-size: 18px;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.category-list_li:hover {
+  transform: scale(1.1);
+  color: #1c2a39;
+  font-weight: 800;
 }
 
 /*# sourceMappingURL=index.css.map */

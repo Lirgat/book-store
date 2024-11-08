@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "sass ./src/scss/style.scss:./src/css/index.css && webpack",
     "build:watch": "webpack --watch",
-    "scss": "sass --watch ./src/scss/style.scss:./src/css/index.css",
+    "scss": "sass --watch ./src/scss/style.scss:./src/css/index.css"
   },
   "author": "",
   "license": "ISC",

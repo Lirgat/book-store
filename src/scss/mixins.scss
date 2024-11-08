@@ -12,6 +12,7 @@
     cursor: pointer;
     background-color: none;
     font-size: $size;
+    transition: 0.3s;
 }
 
 @mixin svg($width, $height) {
@@ -24,7 +25,7 @@
 @mixin promo($bg-color){
     position: absolute;
     background-color: $bg-color;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     padding: 20px;
     z-index: 100;
