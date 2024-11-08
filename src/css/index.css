@@ -14,7 +14,7 @@ html {
 }
 
 .project-header {
-  padding: 47px 20.11% 0 20.11%;
+  margin: 47px 20.11% 0 20.11%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,11 +77,12 @@ html {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  overflow: hidden;
+  position: relative;
 }
 
 .slider-wrapper {
   width: 100%;
+  overflow: hidden;
 }
 
 .slide-wrapper:not(.active-slide) {
@@ -92,7 +93,7 @@ html {
   width: 100%;
   visibility: hidden;
   transform: scale(0.05);
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .slide-wrapper.active-slide {
@@ -124,6 +125,67 @@ html {
 .active-dot {
   background-color: #9E98DC;
   transform: scale(1.1);
+}
+
+.slider-wrapper_purple, .slider-wrapper_pink {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 0;
+}
+
+.purple_img, .pink_img {
+  transition: 0.3s;
+}
+
+.slider-wrapper_purple {
+  position: absolute;
+  background-color: #9E98DC;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 20px;
+  z-index: 100;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 27px 8px -14px rgba(81, 87, 92, 0.29);
+  height: 204px;
+  top: 6%;
+  right: -8%;
+}
+
+.slider-wrapper_purple:hover {
+  background-color: #b7b0ff;
+  transform: scale(1.05);
+}
+.slider-wrapper_purple:hover .purple_img {
+  transition: 0.3s;
+  transform: translateX(10px);
+}
+
+.slider-wrapper_pink {
+  position: absolute;
+  background-color: #FF8FE6;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 20px;
+  z-index: 100;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 27px 8px -14px rgba(81, 87, 92, 0.29);
+  padding: 0 47px 20px 20px;
+  height: 273px;
+  bottom: 10%;
+  right: -30%;
+}
+
+.slider-wrapper_pink:hover {
+  background-color: #ff75e1;
+  transform: scale(1.05);
+}
+.slider-wrapper_pink:hover .pink_img {
+  transition: 0.3s;
+  transform: translateX(10px);
 }
 
 /*# sourceMappingURL=index.css.map */
