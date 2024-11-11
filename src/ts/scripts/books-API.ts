@@ -1,4 +1,8 @@
-import { authorsValidate, imgValidate } from "./bookValidations";
+import { authorsValidate, imgValidate, priceValidate } from "./bookValidations";
+
+const loadMoreBtn = document.querySelector(".book-catalog_loadMore") as HTMLElement;
+const booksSection = document.querySelector(".book-catalog-list") as HTMLElement;
+const categories = document.querySelectorAll(".category-list_li") as NodeListOf<HTMLElement>
 
 interface BookVolume {
     volumeInfo: {
@@ -20,13 +24,9 @@ interface BookResponse {
     items: BookVolume[];
 }
 
-const loadMoreBtn = document.querySelector(".book-catalog_loadMore") as HTMLElement;
-const booksSection = document.querySelector(".book-catalog-list") as HTMLElement;
-const categories = document.querySelectorAll(".category-list_li") as NodeListOf<HTMLElement>
-
 let currentCategory:string = "Architecture"
 
-const createHtmlBook = (authors:string[], title: string, description:string, img:string | undefined, price:number | undefined, ratingsCount:number | undefined, averageRating:number | undefined):string => {
+const createHtmlBook = (authors:string[], title: string, description:string, img:string | undefined, price:number | undefined, currencyCode: string | undefined, ratingsCount:number | undefined, averageRating:number | undefined):string => {
         return `<div class="book">
         <img src="${imgValidate(img)}" alt="" class="book-img">
     <div class="book-info">
@@ -37,7 +37,7 @@ const createHtmlBook = (authors:string[], title: string, description:string, img
             <div class="book-rating-counting"><p class="book-rating-counting_count">${ratingsCount} review</p></div>
         </div>
         <p class="book-info_description">${description}</p>
-        <div class="book-info_price"></div>
+        <div class="book-info_price">${priceValidate(price, currencyCode)}</div>
         <button class="book-info_button">IN THE CART</button>
     </div>
 </div>`

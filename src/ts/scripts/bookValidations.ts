@@ -15,10 +15,22 @@ const authorsValidate = (authors:string[]):string => {
 const imgValidate = (img:string | undefined):string => {
     let showImageHTML:string | undefined = img
     if(showImageHTML === undefined){
-        return "./assets/img/jpg/basicPreview.jpg";
+        return "./assets/img/jpg/placeholder.jpg";
     } else {
         return showImageHTML
     }
 }
 
-export {authorsValidate, imgValidate}
+const priceValidate = (price: number | undefined, currencyCode: string | undefined):string => {
+    if(price === undefined || currencyCode === undefined){
+        return ''
+    } else {
+        if(currencyCode === "RUB"){
+            return `₽${price}`
+        } else {
+            return ''
+        }
+    }
+}
+
+export {authorsValidate, imgValidate, priceValidate}
