@@ -25,21 +25,19 @@
 
 .category-list_li {
     @include button(#5C6A79, 18px);
-    font-weight: 600;
+    font-weight: 700;
     z-index: 200;
 }
 
 .category-list_li:hover {
     transform: scale(1.1);
     color: #1c2a39;
-    font-weight: 800;
 }
 
 .active-category {
     position: relative;
     transform: scale(1.1);
     color: #1c2a39;
-    font-weight: 800;
 }
 
 .active-category::before {
