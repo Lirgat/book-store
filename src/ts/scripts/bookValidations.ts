@@ -27,7 +27,7 @@ const imgValidate = (img: BookImage | undefined): string => {
 
 const priceValidate = (price: RetailPriceObj): string => {
   if (price === undefined || price.amount === undefined) {
-    return "NOT FOR SALE";
+    return "FREE";
   } else {
     return `₽${price.amount}`;
   }
