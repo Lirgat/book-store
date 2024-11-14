@@ -1,12 +1,32 @@
 import { authorsValidate, imgValidate, priceValidate, ratingValidate, descriptionValidate } from "./bookValidations";
 import { BookResponse, BookVolume} from "./interfaces";
 
+let buyNowBtn = document.querySelectorAll('.book-info_button') as NodeListOf<HTMLElement>
+const shopCount = document.querySelector('.shopCount') as HTMLElement
 const loadMoreBtn = document.querySelector(".book-catalog_loadMore") as HTMLElement;
 const booksSection = document.querySelector(".book-catalog-list") as HTMLElement;
 const categories = document.querySelectorAll(".category-list_li") as NodeListOf<HTMLElement>
 
 let currentCategory:string = "Architecture"
-let loadMoreCount:number = 0
+let loadMoreCount:number = 0;
+let shopCounter:number = 0
+
+const initShopper = ():void => {
+    buyNowBtn.forEach((btn)=> {
+        if(btn.classList.contains('.active-book_btn')){
+            shopCounter = shopCounter 
+        } else {
+            btn.addEventListener("click", () => {
+                btn.classList.add('active-book_btn')
+                btn.textContent = "IN THE CART"
+                shopCounter += 1
+                shopCount.style.visibility = "visible"
+                shopCount.textContent = String(shopCounter) 
+            })
+        }
+        
+    })
+}
 
 const fetchBooks = async (currentCategory:string, token:string, page: number):Promise<void> => {
     try {
@@ -37,7 +57,8 @@ const fetchBooks = async (currentCategory:string, token:string, page: number):Pr
            booksSection.appendChild(bookElement)
            
        }) }
-         
+       buyNowBtn = document.querySelectorAll('.book-info_button') as NodeListOf<HTMLElement>
+       initShopper()
     } catch(error) {
         console.error("Error fetching books:", error);
     } 

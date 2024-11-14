@@ -21,13 +21,13 @@ const imgValidate = (img: BookImage | undefined): string => {
   if (img && img.thumbnail) {
     return img.thumbnail;
   } else {
-    return "./assets/img/jpg/placeholder.jpg";
+    return "./src/assets/img/jpg/placeholder.jpg";
   }
 };
 
 const priceValidate = (price: RetailPriceObj): string => {
   if (price === undefined || price.amount === undefined) {
-    return "FREE";
+    return "NOT FOR SALE";
   } else {
     return `₽${price.amount}`;
   }
