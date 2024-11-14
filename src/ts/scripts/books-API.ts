@@ -6,10 +6,11 @@ const booksSection = document.querySelector(".book-catalog-list") as HTMLElement
 const categories = document.querySelectorAll(".category-list_li") as NodeListOf<HTMLElement>
 
 let currentCategory:string = "Architecture"
+let loadMoreCount:number = 0
 
-const fetchBooks = async (currentCategory:string, token:string):Promise<void> => {
+const fetchBooks = async (currentCategory:string, token:string, page: number):Promise<void> => {
     try {
-        let response:Response = await fetch(`https://www.googleapis.com/books/v1/volumes?q="subject:${currentCategory}"&key= ${token} &printType=books&startIndex=0&maxResults=6&langRestrict=en`)
+        let response:Response = await fetch(`https://www.googleapis.com/books/v1/volumes?q="subject:${currentCategory}"&key= ${token} &printType=books&startIndex=${page}&maxResults=6&langRestrict=en`)
         
         if(!response.ok){
             throw new Error(`HTTP error! status: ${response.status}`)
@@ -30,7 +31,7 @@ const fetchBooks = async (currentCategory:string, token:string):Promise<void> =>
            </div>
            <p class="book-info_description">${descriptionValidate(book.volumeInfo.description)}</p>
            <div class="book-info_price">${priceValidate(book.saleInfo.retailPrice)}</div>
-           <button class="book-info_button">IN THE CART</button>
+           <button class="book-info_button">BUY NOW</button>
        </div>
    `;
            booksSection.appendChild(bookElement)
@@ -42,7 +43,7 @@ const fetchBooks = async (currentCategory:string, token:string):Promise<void> =>
     } 
 }
 
-fetchBooks(currentCategory, "AIzaSyBbTAT12E1n5MMyhWBAQMZNl1EZFgkcKWI")
+fetchBooks(currentCategory, "AIzaSyBbTAT12E1n5MMyhWBAQMZNl1EZFgkcKWI", loadMoreCount)
 
 const getBookList = (token:string):void => {
     categories.forEach((category:HTMLElement):void => {
@@ -50,10 +51,17 @@ const getBookList = (token:string):void => {
             categories.forEach((el) => {el.classList.remove("active-category")})  
             currentCategory = category.textContent || currentCategory
             category.classList.add("active-category")
+            loadMoreCount = 0
             booksSection.innerHTML = ''
-            fetchBooks(currentCategory, token)
+            fetchBooks(currentCategory, token, loadMoreCount)
         })
     })
 }
+
+loadMoreBtn.addEventListener("click", () => {
+    loadMoreCount += 6
+    console.log(loadMoreCount)
+    fetchBooks(currentCategory, "AIzaSyBbTAT12E1n5MMyhWBAQMZNl1EZFgkcKWI", loadMoreCount)
+})
 
 export default getBookList

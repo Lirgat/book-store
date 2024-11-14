@@ -1,7 +1,7 @@
 @import "../mixins.scss";
 
 .project-main {
-    @include flex(row, center, space-between, 0);
+    @include flex(row, flex-start, unset, 70px);
     margin: 100px 11.11% 0 11.11%;
 }
 
@@ -11,20 +11,20 @@
     list-style-type: none;
 }
 
-.category-list::before {
-    position: absolute;
-    content: '';
-    width: 516px;
-    background-color: #efeef6;
-    height: 100%;
-    z-index: 100;
-    padding-bottom: 30px;
-    top: -30px;
-    left: -120%;
-}
+// .category-list::before {
+//     position: absolute;
+//     content: '';
+//     width: 516px;
+//     background-color: #efeef6;
+//     height: 100%;
+//     z-index: 100;
+//     padding-bottom: 30px;
+//     top: -30px;
+//     left: -120%;
+// }
 
 .category-list_li {
-    @include button(#5C6A79, 18px);
+    @include button(#5C6A79, 16px);
     font-weight: 700;
     z-index: 200;
 }
@@ -49,4 +49,89 @@
     left: -20px;
     top: 6px;
     border-radius: 20px;
+}
+
+.book-catalog {
+    position: relative;
+    z-index: 400;
+    @include flex(column, center, center, 100px);
+    flex-wrap:wrap;
+}
+
+.book-catalog-list {
+    @include flex(row, center, space-between, 70px);
+    flex-wrap: wrap;
+}
+
+.book {
+    @include flex(row, center, center, 35px);
+}
+
+.book-info {
+    @include flex(column, flex-start, center, 4px);
+    max-width: 180px;
+    min-width: 180px;
+}
+
+.book-info_author {
+    font-family: sans-serif;
+    font-weight: 200;
+    color: #5C6A79;
+    width: 100%;
+    font-size: 10px;
+}
+
+.book-info_h1 {
+    font-size: 16px;
+    color: #1c2a39;
+    width: 100%;
+}
+
+.book-info_description {
+    margin-top: 12px;
+    width: 100%;
+    overflow: hidden;
+      text-overflow: ellipsis;
+      display: -moz-box;
+      -moz-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      line-clamp: 3;
+      box-orient: vertical;
+      font-size: 10px;
+      font-family: sans-serif;
+      font-weight: 200;
+      color: #5C6A79;
+}
+
+.book-rating {
+    @include flex(row, center, start, 5px)
+}
+
+.book-rating-counting_count {
+    font-size: 10px;
+    font-family: sans-serif;
+    color: #5C6A79;
+    font-weight: 200;
+}
+
+.book-img {
+    box-shadow: 0px 27px 8px -14px rgba(81, 87, 92, 0.29);
+}
+
+.book-info_price {
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #1c2a39;
+}
+
+.book-info_button {
+    margin-top: 12px;
+}
+
+.book-info_button, .book-catalog_loadMore {
+    @include bookBtn();
+    width: 170px;
 }
