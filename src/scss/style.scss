@@ -1,1 +1,4 @@
-@import "index","./components/header", "./components/main";
+@use "index";
+@use "./components/header.scss";
+@use "./components/main.scss";
+@use "./mobile/mobile.scss"

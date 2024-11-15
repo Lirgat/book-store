@@ -13,6 +13,14 @@ html {
   font-size: 16px;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+}
+
 .project-header {
   margin: 47px 11.11% 0 11.11%;
   display: flex;
@@ -380,6 +388,67 @@ html {
   background-color: none;
   border: none;
   color: #5C6A79;
+}
+
+@media screen and (max-width: 600px) {
+  .project-header {
+    margin: 20px 2% 0 2%;
+  }
+  .header-logo {
+    font-size: 1.5rem;
+  }
+  .header-links {
+    display: none;
+  }
+  .header-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .header-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .header-buttons_login, .header-buttons_search, .header-buttons_shopper {
+    transform: scale(1.5);
+  }
+  .slider-wrapper_purple, .slider-wrapper_pink, .category-list {
+    display: none;
+  }
+  .project-main {
+    margin: 20px 2% 0 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .banner-slide {
+    margin-top: 20px;
+  }
+  .book {
+    gap: 10px;
+  }
+  .book-info_h1 {
+    font-size: 14px;
+  }
+  .book-info {
+    max-width: 160px;
+    min-width: 160px;
+  }
+  .book-info_button {
+    width: 160px;
+  }
+  .book-catalog {
+    gap: 20px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
